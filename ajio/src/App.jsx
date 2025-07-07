@@ -10,12 +10,24 @@ import FilterSection from './components/FilterSection'
 function App() {
   const [count, setCount] = useState(0)
 
+  const [theme, setTheme] = useState(true)
+  
+    const toggle = () => {
+      if(theme == true)
+      {
+        setTheme(false)
+      }
+      else
+      {
+        setTheme(true)
+      }
+    }
+
   return (
     <>
-      <div>
-        <Navbar />
-        
-        <Body />
+      <div className={`${theme ? "bg-white" : "bg-black text-white"}`}>
+        <Navbar theme = {theme} toggle = {toggle} />
+        <Body theme = {theme} toggle = {toggle}/>
       </div>
     </>
   )

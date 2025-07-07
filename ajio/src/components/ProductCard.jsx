@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function ProductCard({info}) {
+function ProductCard({info, theme}) {
 
   return (
     <div>
@@ -14,7 +14,7 @@ function ProductCard({info}) {
 
           
 
-            <div className='border-[5px] border-gray-200 w-[16rem] h-[25rem] rounded-xl px-5 bg-gray-100 shadow-2xl'>
+            <div className={`border-[5px] border-gray-200 w-[16rem] h-[25rem] rounded-xl px-5 ${theme ? "bg-gray-100" : "bg-teal-100 text-white"}  shadow-2xl`}>
               <div className=' py-5 '>
                 <img className=' w-[12rem] h-[13rem] rounded-2xl mx-auto shadow-xl object-cover ' src={info.imageURL} alt="" />
               </div>

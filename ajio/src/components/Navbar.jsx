@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 
-function Navbar() {
+function Navbar({theme, toggle}) {
 
   const [search, setSearch] = useState("")
+  
+
   return (
-    <div className="sticky top-0 z-50 bg-white shadow-lg mb-5">
-      <div className='flex justify-between border-[3px] border-gray-100 px-7 py-4 shadow-lg sticky top-0 items-center'>
+    <div className="sticky top-0 z-50 shadow-lg ">
+      <div className='flex justify-between border-[3px] border-gray-100 px-7 py-4 shadow-lg items-center'>
         <div>
             <h1 className='font-bold text-3xl'>LOGO</h1>
         </div>
@@ -26,6 +28,7 @@ function Navbar() {
                 <li>WOMEN</li>
                 <li>KID</li>
                 <li>CART</li>
+                <button onClick={toggle} className='bg-zinc-400 px-4 py-2 rounded-4xl items-center'>{theme ? <i class="fa-solid fa-moon"></i> : <i class="fa-solid fa-sun"></i> }</button>
             </ul>
         </div>
       </div>
