@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Todo from './components/todo'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
   const Increase = () => {
-    setCount = count + 1
+    setCount(count + 1)
   }
   
   const Decrease = () => {
     setCount(count-1)
   }
+
 
   return (
     <>
@@ -27,6 +29,10 @@ function App() {
 
       <div className='m-auto text-center mt-20 border border-black w-1/5 py-4 rounded-2xl '>
         <h1 className='font-bold text-xl'>{count}</h1>
+      </div>
+
+      <div>
+        <Todo />
       </div>
     </>
   )

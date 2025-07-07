@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Navbar from './components/Navbar'
 import ProductCard from './components/ProductCard'
 import Body from './components/Body'
+import FilterSection from './components/FilterSection'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <>
       <div>
         <Navbar />
+        
         <Body />
       </div>
     </>
