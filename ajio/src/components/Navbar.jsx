@@ -6,7 +6,7 @@ function Navbar({theme, toggle}) {
   
 
   return (
-    <div className="sticky top-0 z-50 shadow-lg ">
+    <div className="sticky top-0 z-50 shadow-lg bg-white">
       <div className='flex justify-between border-[3px] border-gray-100 px-7 py-4 shadow-lg items-center'>
         <div>
             <h1 className='font-bold text-3xl'>LOGO</h1>

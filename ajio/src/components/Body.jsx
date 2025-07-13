@@ -2,6 +2,7 @@ import React from 'react'
 import ProductCard from './ProductCard'
 import { useState, useEffect } from 'react';
 import FilterSection from './FilterSection';
+import Shimmer from './Shimmer';
 
 function Body({theme, toogle}) {
 
@@ -23,7 +24,7 @@ function Body({theme, toogle}) {
        getApiData()
       }, [])
 
-  return (
+  return updatedProduct.length === 0 ? <Shimmer /> :  (
     <div className="mt-10">
 
       <div>
