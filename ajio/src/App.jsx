@@ -25,8 +25,7 @@ function App() {
 
   return (
     <>
-      <div className={`${theme ? "bg-white" : "bg-black text-white"}`}>
-        <Navbar theme = {theme} toggle = {toggle} />
+      <div className={`${theme ? "bg-white" : "bg-black text-white"}`}> 
         <Body theme = {theme} toggle = {toggle}/>
       </div>
     </>

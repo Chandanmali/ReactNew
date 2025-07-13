@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
 
-function Navbar({theme, toggle}) {
+function Navbar({theme, toggle, matchCard}) {
 
   const [search, setSearch] = useState("")
+
+  const handleSearch = (e) => {
+    const value = e.target.value
+    setSearch(value)
+    matchCard(value)
+  }
+
   
 
   return (
-    <div className="sticky top-0 z-50 shadow-lg bg-white">
-      <div className='flex justify-between border-[3px] border-gray-100 px-7 py-4 shadow-lg items-center'>
+    <div className="sticky top-0 z-50 shadow-lg ">
+      <div className='flex justify-between  px-7 py-4 shadow-lg items-center'>
         <div>
             <h1 className='font-bold text-3xl'>LOGO</h1>
         </div>
@@ -17,9 +24,9 @@ function Navbar({theme, toggle}) {
           type="text" 
           placeholder='Enter your love Brand'
           value={search}
-          onChange={(e) => {setSearch(e.target.value)}}
+          onChange={handleSearch}
           />
-          <button className='border border-gray-300 shadow-2xl bg-zinc-400 px-8 py-2 rounded-e-2xl font-bold cursor-pointer'><i class="fas fa-search"></i></button>
+          <button onClick={handleSearch} className='border border-gray-300 shadow-2xl bg-zinc-400 px-8 py-2 rounded-e-2xl font-bold cursor-pointer'><i class="fas fa-search"></i></button>
         </div>
 
         <div>
