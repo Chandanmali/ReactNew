@@ -7,6 +7,7 @@ import './index.css'
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'
 import Men from './components/Men'
 import Women from './components/Women.jsx'
+import ErrorPage from './components/ErrorPage.jsx'
 
 
 const App = () => {
@@ -39,6 +40,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       
       {
