@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import FilterSection from './FilterSection';
 import Shimmer from './Shimmer';
 import Navbar from './Navbar';
+import { useOutletContext } from 'react-router-dom';
 
-function Body({ theme, toggle }) {
 
-  const [product, setProduct] = useState([]);
-  const [updatedProduct, setupdatedProduct] = useState([])
+function Body() {
+  const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useOutletContext();
+  
+  
 
   const filterData = (searchText) => {
     const filter = product.filter((prev) => {
@@ -25,7 +27,6 @@ function Body({ theme, toggle }) {
     console.log(json.searchresult)
     setProduct(json.searchresult)
     setupdatedProduct(json.searchresult)
-
   }
 
   useEffect(() => {
@@ -34,7 +35,7 @@ function Body({ theme, toggle }) {
 
   return updatedProduct.length === 0 ? <Shimmer /> : (
     <div>
-      <Navbar theme = {theme} toggle = {toggle} matchCard={filterData}/>
+      {/* <Navbar theme = {theme} toggle = {toggle} matchCard={filterData}/> */}
       <div className="mt-10">
 
         <div>

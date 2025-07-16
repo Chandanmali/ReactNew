@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FilterSection({product, setProduct, setupdatedProduct, theme, toogle}) {
+function FilterSection({product, setProduct, setupdatedProduct, theme, toggle}) {
 
   
 
