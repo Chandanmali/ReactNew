@@ -8,6 +8,7 @@ import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'
 import Men from './components/Men'
 import Women from './components/Women.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
+import ProductDetail from './components/ProductDetail.jsx'
 
 
 const App = () => {
@@ -52,6 +53,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/men",
         element: <Men />
+      },
+      
+      {
+        path: "/shoes/:productID",
+        element: <ProductDetail />
       }
     ]
   },

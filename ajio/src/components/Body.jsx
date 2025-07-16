@@ -4,20 +4,19 @@ import { useState, useEffect } from 'react';
 import FilterSection from './FilterSection';
 import Shimmer from './Shimmer';
 import Navbar from './Navbar';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 
 
 function Body() {
   const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useOutletContext();
   
   
-
-  const filterData = (searchText) => {
-    const filter = product.filter((prev) => {
-      return prev.brandname.toLowerCase().includes(searchText.toLowerCase())
-    })
-    setupdatedProduct(filter)
-  }
+  // const filterData = (searchText) => {
+  //   const filter = product.filter((prev) => {
+  //     return prev.brandname.toLowerCase().includes(searchText.toLowerCase())
+  //   })
+  //   setupdatedProduct(filter)
+  // }
 
 
   const getApiData = async () => {
@@ -53,7 +52,7 @@ function Body() {
             updatedProduct.map((elem, index) => {
               return (
                 <div key={index}>
-                  <ProductCard info={elem} theme={theme} />
+                  <Link to={`/shoes/${elem.productId}`}><ProductCard info={elem} theme={theme} /></Link>
                 </div>
               )
             })
