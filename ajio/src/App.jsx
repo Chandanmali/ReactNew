@@ -9,6 +9,7 @@ import Men from './components/Men'
 import Women from './components/Women.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 import ProductDetail from './components/ProductDetail.jsx'
+import Profile from './components/Profile.jsx'
 
 
 const App = () => {
@@ -58,6 +59,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/shoes/:productID",
         element: <ProductDetail />
+      },
+      
+      {
+        path: "/profile",
+        element: <Profile />
       }
     ]
   },
