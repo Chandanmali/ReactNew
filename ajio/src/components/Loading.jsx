@@ -12,9 +12,7 @@ function Loading() {
   };
 
   return (
-    <div className="sweet-loading mt-28">
-      
-
+    <div className="sweet-loading mt-28 flex justify-center items-center">
       <BounceLoader
         color={color}
         loading={loading}

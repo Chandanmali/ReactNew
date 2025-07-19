@@ -1,18 +1,16 @@
 import React from 'react'
 import MenFilter from './MenFilter'
-import WomenFormal from './Women/WomenFormal'
+import KidsFormal from './Kids/KidsFormal'
 
-
-
-function Women() {
+function Kids() {
   return (
     <div>
       <div className='flex'>
         <MenFilter />
-        <WomenFormal />
+        <KidsFormal />
       </div>
     </div>
   )
 }
 
-export default Women
+export default Kids

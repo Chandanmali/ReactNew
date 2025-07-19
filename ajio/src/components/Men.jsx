@@ -1,9 +1,12 @@
 import React from 'react'
+import MenFilter from './MenFilter'
+import MenFormal from './Men/MenFormal'
 
 function Men() {
   return (
-    <div>
-      <h1>This is Men product</h1>
+    <div className='flex'>
+      <MenFilter />
+      <MenFormal />
     </div>
   )
 }

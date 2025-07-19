@@ -34,7 +34,7 @@ function Navbar({theme, toggle, matchCard}) {
             <ul className='flex font-semibold text-xl gap-10'>
                 <Link to={'/men'}><li>MEN</li></Link>
                 <Link to={'/women'}><li>WOMEN</li></Link>
-                <Link to= {'/kid'}>KID</Link>
+                <Link to= {'/kids'}>KIDS</Link>
                 <Link to= {'/profile'}>PROFILE</Link>
                 <Link to={'/cart'}><li>CART</li></Link>
                 <button onClick={toggle} className='bg-zinc-400 px-4 py-2 rounded-4xl items-center'>{theme ? <i class="fa-solid fa-moon"></i> : <i class="fa-solid fa-sun"></i> }</button>

@@ -10,6 +10,7 @@ import Women from './components/Women.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 import ProductDetail from './components/ProductDetail.jsx'
 import Profile from './components/Profile.jsx'
+import Kids from './components/Kids.jsx'
 
 
 const App = () => {
@@ -54,6 +55,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/men",
         element: <Men />
+      },
+      
+      {
+        path: "/women",
+        element: <Women />
+      },
+      
+      {
+        path: "/kids",
+        element: <Kids />
       },
       
       {
