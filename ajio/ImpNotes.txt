@@ -1,0 +1,23 @@
+1. Custom Hook - useful for easy optimmisation of our application like eg, create a custom hook for useEffect api call and render this hook into page
+
+2. In the production buid file generate, In this file the main \index.html page exits but suppose we have to create any new or different section then our application is slow because loading and run time increases for this, we can create Lazy loading and divide our application in chunks like eg, index.html and groccery.html for this Loading we have to use Suspense
+
+3.Lazy Loading also know
+i. code splitting
+ii. dynamic import
+
+4. Syntax
+const Groccery = lazy(() => import('component/Groccery'))
+
+5. for creating this bundler they take some time, for that react gives error because in start they do not have any component for Groccery
+
+for resolving this error we use Suspense
+{
+    path: "/groccery",
+    element: "<Suspense fallback = {<h1>Loading...</h1>}><Groccery /> </Suspense>"
+}
+
+
+---------------------------------
+
+HOFC(Higher order function component) = Hofc is a function which take component as an parameter and return new component

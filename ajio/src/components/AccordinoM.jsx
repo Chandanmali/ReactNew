@@ -1,19 +1,11 @@
 import React, { useState } from 'react'
 
-function AccordinoM({ tag, ind}) {
+function AccordinoM({ tag, open, setOpen}) {
 
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
 
-    const expand = (ind) => {
-        if(open === ind)
-        {
-            setOpen(null)
-        }
-        else{
-            setOpen(ind)
-        }
-        
-        
+    const expand = () => {
+        setOpen()
     }
 
     return (
@@ -21,7 +13,7 @@ function AccordinoM({ tag, ind}) {
             <div className='my-1 shadow-md border border-gray-200 px-4 py-2 w-64 mb-6 rounded-lg'>
                 <div className='flex justify-between'>
                     <h1 className='font-bold text-xl font-serif'>{tag}</h1>
-                    <button onClick={() => expand(ind)} className='bg-black text-white px-2 rounded-md font-serif'>Show</button>
+                    <button onClick={expand} className='bg-black text-white px-2 rounded-md font-serif'>Show</button>
                 </div>
 
                 <div>
