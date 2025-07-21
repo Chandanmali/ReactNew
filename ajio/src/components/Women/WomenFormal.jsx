@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import ProductCard from '../ProductCard';
 import { Link, useOutletContext } from 'react-router-dom';
 import Shimmer from '../Shimmer';
 import Loading from '../Loading';
+import ThemeContext from '../../utils/themeContext';
 
 function WomenFormal() {
 
-    const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useOutletContext();
+    //const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useOutletContext();
+
+    const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useContext(ThemeContext);
 
     const [menFormal, setMenFormal] = useState([])
 

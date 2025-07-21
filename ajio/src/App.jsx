@@ -11,28 +11,31 @@ import ErrorPage from './components/ErrorPage.jsx'
 import ProductDetail from './components/ProductDetail.jsx'
 import Profile from './components/Profile.jsx'
 import Kids from './components/Kids.jsx'
+import ThemeContext, { ThemeProvider } from './utils/themeContext.jsx'
+import { useContext } from 'react'
 
 
 const App = () => {
+  const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct, filterData } = useContext(ThemeContext)
 
-  const [theme, setTheme] = useState(true)
-  const [product, setProduct] = useState([]);
-  const [updatedProduct, setupdatedProduct] = useState([])
+  //const [theme, setTheme] = useState(true)
+  // const [product, setProduct] = useState([]);
+  // const [updatedProduct, setupdatedProduct] = useState([])
   
-  const toggle = () => setTheme(!theme);
+  //const toggle = () => setTheme(!theme);
 
-  const filterData = (searchText) => {
-    const filter = product.filter((prev) => {
-      return prev.brandname.toLowerCase().includes(searchText.toLowerCase())
-    })
-    setupdatedProduct(filter)
-  }
+  // const filterData = (searchText) => {
+  //   const filter = product.filter((prev) => {
+  //     return prev.brandname.toLowerCase().includes(searchText.toLowerCase())
+  //   })
+  //   setupdatedProduct(filter)
+  // }
 
   return(
     <div className={`${theme ? "bg-white" : "bg-black text-white"}`}>
       <div >
-        <Navbar theme={theme} toggle={toggle} matchCard={filterData} />
-         <Outlet context={{ theme, toggle, product, setProduct, updatedProduct, setupdatedProduct }} />
+        <Navbar />
+         <Outlet context={{ }} />
       </div>
     </div>
   )
@@ -84,7 +87,9 @@ const appRouter = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router = {appRouter} />
+    <ThemeProvider>
+      <RouterProvider router = {appRouter} />
+    </ThemeProvider>
   </StrictMode>,
 )
 

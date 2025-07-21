@@ -21,3 +21,21 @@ for resolving this error we use Suspense
 ---------------------------------
 
 HOFC(Higher order function component) = Hofc is a function which take component as an parameter and return new component
+
+
+----------------------------------
+
+Diffence between import FilterSection & import {useState, context} basicall normal import & import {}
+
+if there is an default export FilterSection then : import FilterSection
+if there is an no default export FilterSection then : import {FilterSection}
+
+---------------------------------
+
+
+***************useContext********************
+
+if i want to pass any prop from 1 component to 4th component so basically we do prop drilling, 
+(1 -> 2 -> 3 -> 4), but we are not using this props in (2, 3, 4) component, so there is no use of passing this props in every component
+
+Solution: We can use useContext, can create a global store -> create data -> and pass wherever we need

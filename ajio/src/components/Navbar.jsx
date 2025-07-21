@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import ThemeContext from '../utils/themeContext'
 
-function Navbar({theme, toggle, matchCard}) {
+function Navbar() {
+
+  const { theme, toggle, filterData } = useContext(ThemeContext)
 
   const [search, setSearch] = useState("")
 
   const handleSearch = (e) => {
     const value = e.target.value
     setSearch(value)
-    matchCard(value)
+    filterData(value)
   }
 
   

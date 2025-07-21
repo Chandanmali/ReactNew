@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ProductCard from './ProductCard'
 import { useState, useEffect } from 'react';
 import FilterSection from './FilterSection';
 import Shimmer from './Shimmer';
 import Navbar from './Navbar';
 import { Link, useOutletContext } from 'react-router-dom';
+import ThemeContext from '../utils/themeContext';
+
 
 
 function Body() {
-  const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useOutletContext();
-  
+  //const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useOutletContext();
+
+  const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useContext(ThemeContext);
+
   
   // const filterData = (searchText) => {
   //   const filter = product.filter((prev) => {
