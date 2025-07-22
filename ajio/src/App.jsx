@@ -14,6 +14,8 @@ import Kids from './components/Kids.jsx'
 import ThemeContext, { ThemeProvider } from './utils/themeContext.jsx'
 import { useContext } from 'react'
 import Cart from './components/Cart.jsx'
+import {Provider} from "react-redux"
+import appStore from './store/Store.jsx'
 
 
 const App = () => {
@@ -33,12 +35,17 @@ const App = () => {
   // }
 
   return(
-    <div className={`${theme ? "bg-white" : "bg-black text-white"}`}>
+    <Provider store={appStore}>
+      <div className={`${theme ? "bg-white" : "bg-black text-white"}`}>
       <div >
         <Navbar />
         <Outlet />
       </div>
     </div>
+
+
+    </Provider>
+    
   )
 }
 

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
 import useProductDetail from '../hooks/useProductDetail';
+import { addItems } from '../store/cartSlice';
+import { useDispatch } from 'react-redux';
 
 function ProductDetail() {
 
     //const [singleProduct, setSingleProduct] = useState(null)
-    const {productID} = useParams()
+    const { productID } = useParams()
     console.log(productID)
 
     //custom hook - nothing but use for easy optimisation
@@ -23,6 +25,17 @@ function ProductDetail() {
     //     // console.log(json.galleryImagesList[0].galleryImages[4].value)
     //     setSingleProduct(json)
     // }
+
+
+
+    const dispatch = useDispatch()
+
+    const [addedToCart, setAddedToCart] = useState(false);
+
+    const handleCart = () => {
+        dispatch(addItems(singleProduct));
+        setAddedToCart(true);
+    }
 
     return singleProduct === null ? <Loading /> : (
         <div>
@@ -71,7 +84,13 @@ function ProductDetail() {
                         <h1 className='text-xl font-semibold mt-3'>Rating : <span className='text-yellow-600'>{(singleProduct.averageRating).toFixed(1)}</span> <span className='pl-7'>Review: <span className='text-yellow-600'>{singleProduct.numberOfReviews}</span></span></h1> : <h1 className='text-xl font-semibold mt-3'>Rating : <span className='text-yellow-600'>{(singleProduct.ratingCount).toFixed(1)}</span> <span className='pl-7'>Review: <span className='text-yellow-600'>{singleProduct.numberOfReviews}</span></span></h1>}
 
                     <div className='flex gap-10 pt-10 '>
-                        <button className='text-rose-600 text-xl font-bold bg-white border border-rose-600 px-10 py-3 rounded-xl shadow-xl cursor-pointer'>Add to Bag</button>   
+                        <button
+                            onClick={handleCart}
+                            className='text-rose-600 text-xl font-bold bg-white border border-rose-600 px-10 py-3 rounded-xl shadow-xl cursor-pointer flex items-center gap-2'
+                        >
+                            
+                            {addedToCart ? "Added" : "Add to Bag"}
+                        </button>
 
                         <button className='text-white text-xl font-bold bg-rose-600 px-10 py-3 rounded-xl shadow-xl cursor-pointer'>Buy Now</button>
                     </div>
