@@ -5,7 +5,7 @@ function AccordinoM({ tag, open, setOpen}) {
     // const [open, setOpen] = useState(false)
 
     const expand = () => {
-        setOpen()
+        setOpen() //1. setOpen send
     }
 
     return (

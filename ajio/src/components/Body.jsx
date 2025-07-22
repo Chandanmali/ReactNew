@@ -9,12 +9,15 @@ import ThemeContext from '../utils/themeContext';
 
 
 
+
 function Body() {
   //const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useOutletContext();
 
-  const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct } = useContext(ThemeContext);
+  const { theme, toggle, product, setProduct, updatedProduct, setupdatedProduct  } = useContext(ThemeContext);
 
-  
+  // const [product, setProduct] = useState([]);
+  // const [updatedProduct, setupdatedProduct] = useState([])
+
   // const filterData = (searchText) => {
   //   const filter = product.filter((prev) => {
   //     return prev.brandname.toLowerCase().includes(searchText.toLowerCase())

@@ -22,8 +22,8 @@ function MenFilter() {
               return (<div key={index}>
                 <AccordinoM
                   tag={elem}
-                  open = {index === open ? true : false}
-                  setOpen = {() => setOpen(index)} />
+                  open = {index === open ? true : false} /* 3. setOpen set open = 1 */
+                  setOpen = {() => setOpen(index)} />    {/* 2. setOpen set open = 1 */}
               </div>)
             })
           }

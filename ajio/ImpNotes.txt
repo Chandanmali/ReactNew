@@ -39,3 +39,4 @@ if i want to pass any prop from 1 component to 4th component so basically we do 
 (1 -> 2 -> 3 -> 4), but we are not using this props in (2, 3, 4) component, so there is no use of passing this props in every component
 
 Solution: We can use useContext, can create a global store -> create data -> and pass wherever we need
+

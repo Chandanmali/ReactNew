@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ThemeContext from '../utils/themeContext'
+import { useContext } from 'react'
 
 function Navbar() {
 
@@ -14,7 +15,7 @@ function Navbar() {
     filterData(value)
   }
 
-  
+  const val = 1;
 
   return (
     <div className="sticky top-0 z-50 shadow-lg ">
@@ -39,7 +40,7 @@ function Navbar() {
                 <Link to={'/women'}><li>WOMEN</li></Link>
                 <Link to= {'/kids'}>KIDS</Link>
                 <Link to= {'/profile'}>PROFILE</Link>
-                <Link to={'/cart'}><li>CART</li></Link>
+                <Link to={'/cart'} className='text-3xl '><i class="fas fa-cart-plus" >{val &&<span className='bg-gray-400 rounded-2xl px-2 text-lg py-1 relative bottom-5 right-1'>{val}</span>}</i></Link>
                 <button onClick={toggle} className='bg-zinc-400 px-4 py-2 rounded-4xl items-center'>{theme ? <i class="fa-solid fa-moon"></i> : <i class="fa-solid fa-sun"></i> }</button>
             </ul>
         </div>

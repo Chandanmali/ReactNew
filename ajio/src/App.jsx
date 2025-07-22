@@ -13,6 +13,7 @@ import Profile from './components/Profile.jsx'
 import Kids from './components/Kids.jsx'
 import ThemeContext, { ThemeProvider } from './utils/themeContext.jsx'
 import { useContext } from 'react'
+import Cart from './components/Cart.jsx'
 
 
 const App = () => {
@@ -35,7 +36,7 @@ const App = () => {
     <div className={`${theme ? "bg-white" : "bg-black text-white"}`}>
       <div >
         <Navbar />
-         <Outlet context={{ }} />
+        <Outlet />
       </div>
     </div>
   )
@@ -78,6 +79,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />
+      },
+      
+      {
+        path: "/cart",
+        element: <Cart />
       }
     ]
   },
