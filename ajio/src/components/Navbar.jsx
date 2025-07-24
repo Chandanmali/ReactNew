@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ThemeContext from '../utils/themeContext'
 import { useContext } from 'react'
@@ -8,6 +8,8 @@ function Navbar() {
 
   const cartItems = useSelector((store) => store.cart.cartItems)
   console.log(cartItems)
+  const ref = useRef(cartItems)
+  console.log(ref)
 
   const { theme, toggle, filterData } = useContext(ThemeContext)
 
@@ -22,7 +24,7 @@ function Navbar() {
   
 
   return (
-    <div className="sticky top-0 z-50 shadow-lg ">
+    <div className={`sticky top-0 z-50 shadow-lg ${!theme && "border-b-2 border-gray-400"}`}>
       <div className='flex justify-between  px-7 py-4 shadow-lg items-center'>
         <div>
             <Link to={'/'}><h1 className='font-bold text-3xl'>LOGO</h1></Link>
@@ -44,7 +46,10 @@ function Navbar() {
                 <Link to={'/women'}><li>WOMEN</li></Link>
                 <Link to= {'/kids'}>KIDS</Link>
                 <Link to= {'/profile'}>PROFILE</Link>
-                <Link to={'/cart'} className='text-3xl '><i class="fas fa-cart-plus" >{cartItems.length >= 1 &&<span className='bg-gray-400 rounded-2xl px-2 text-lg py-1 relative bottom-5 right-1'>{cartItems.length}</span>}</i></Link>
+                <Link to={'/cart'} className='text-3xl '>
+                <i class="fas fa-cart-plus" >{cartItems.length >= 1 &&
+                  <span className='bg-gray-400 rounded-2xl px-2 text-lg py-1 relative bottom-5 right-1'>{cartItems.length}</span>}</i></Link>
+
                 <button onClick={toggle} className='bg-zinc-400 px-4 py-2 rounded-4xl items-center'>{theme ? <i class="fa-solid fa-moon"></i> : <i class="fa-solid fa-sun"></i> }</button>
             </ul>
         </div>

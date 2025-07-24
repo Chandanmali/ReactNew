@@ -36,7 +36,7 @@ const App = () => {
 
   return(
     <Provider store={appStore}>
-      <div className={`${theme ? "bg-white" : "bg-black text-white"}`}>
+      <div className={`${theme ? "bg-white" : "bg-black text-white "} min-h-screen`}>
       <div >
         <Navbar />
         <Outlet />
