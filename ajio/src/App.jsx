@@ -16,6 +16,7 @@ import { useContext } from 'react'
 import Cart from './components/Cart.jsx'
 import {Provider} from "react-redux"
 import appStore from './store/Store.jsx'
+import Login from './components/Login.jsx'
 
 
 const App = () => {
@@ -91,6 +92,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      },
+      
+      {
+        path: "/login",
+        element: <Login />
       }
     ]
   },

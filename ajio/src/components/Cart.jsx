@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearItems, removeItems } from '../store/cartSlice'
+import ThemeContext from '../utils/themeContext'
 
 
 function Cart() {
+
+    const {theme} = useContext(ThemeContext)
 
     const dispatch = useDispatch()
 
@@ -20,17 +23,18 @@ function Cart() {
 
     return (
         <div>
-            <div className='flex justify-between px-20 py-10'>
+            <div className='flex justify-between px-20 py-10 '>
                 <h1 className='font-bold text-xl border border-gray-400 rounded-lg px-8 py-3 shadow-2xl'>Cart Items - ({cartItems.length})</h1>
 
-                <button onClick={clearAllCards} className='rounded-lg px-8 py-3 bg-black text-white font-bold shadow-2xl cursor-pointer'>Remove All</button>
+                <button onClick={clearAllCards} className={`rounded-lg px-8 py-3 bg-black text-white font-bold shadow-2xl cursor-pointer ${!theme && "bg-gray-800 border"}`}>Remove All</button>
             </div>
             <div className='mb-5'>
                 {
                     cartItems.map((elem, index) => {
                         return (
                             <div>
-                                <div className=' flex justify-center items-center gap-10  border-gray-400 w-[47rem] py-5 rounded-2xl shadow-xl mx-auto mb-7'>
+                                <div className={`flex justify-center items-center gap-10  border-gray-400 w-[47rem] py-5 rounded-2xl shadow-xl mx-auto mb-7 ${!theme && "bg-gray-200"}`}>
+
                                     <img className=' w-[8rem] h-[7rem] rounded-2xl shadow-xl object-cover ' src={elem.galleryImagesList[1].galleryImages[4].value} alt="" />
 
                                     <div>
