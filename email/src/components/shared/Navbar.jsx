@@ -16,7 +16,7 @@ function Navbar() {
                 <div className='p-3 rounded-full hover:bg-gray-100 cursor-pointer'>
                     <GiHamburgerMenu size={"20px"}/>
                 </div>
-                <img className='w-8' src="/public/gmail.png" alt="gmail-logo" />
+                <img className='w-8' src="/gmail.png" alt="gmail-logo" />
                 <h1 className='text-2xl text-gray-500 font-medium'>Gmail</h1>
             </div>
         </div>
@@ -49,7 +49,7 @@ function Navbar() {
                 </div>
                 
                 <div className='cursor-pointer'>
-                    <Avatar src='/public/avtar.jpg' size={"40px"} round = {true}/>
+                    <Avatar src='/avtar.jpg' size={"40px"} round = {true}/>
                 </div>
             </div>
 
