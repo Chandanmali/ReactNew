@@ -3,6 +3,29 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Navbar from './components/shared/Navbar'
 import Sidebar from './components/Sidebar'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+
+import Inbox from './components/Inbox'
+import DashBoard from './components/DashBoard'
+import Mail from './components/Mail'
+
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <DashBoard />,
+    children: [
+      {
+        path: '/',
+        element: <Inbox />
+      },
+      
+      {
+        path: '/mail/:id',
+        element: <Mail />
+      }
+    ]
+  }
+])
 
 
 function App() {
@@ -12,8 +35,7 @@ function App() {
     <>
       <div className='bg-[#f8fafd] h-screen w-screen overflow-hidden'>
         <Navbar />
-        <Sidebar />
-
+        <RouterProvider router={appRouter} />
       </div>
     </>
   )
