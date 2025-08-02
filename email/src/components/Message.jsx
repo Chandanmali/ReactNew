@@ -1,10 +1,20 @@
 import React from 'react'
 import { MdCropSquare } from 'react-icons/md'
 import { RiStarLine } from 'react-icons/ri'
+import { useNavigate } from 'react-router-dom'
 
 function Message() {
+    
+    //redirect to my mail/:id page
+    const navigate = useNavigate()
+
+    const openMail = () => {
+        navigate("/mail/145ere145")
+
+    }
+
   return (
-    <div className='group flex items-start justify-between border-b border-gray-300 px-4 py-3 text-sm hover:cursor-pointer hover:shadow-md '>
+    <div onClick={openMail} className='group flex items-start justify-between border-b border-gray-300 px-4 py-3 text-sm hover:cursor-pointer hover:shadow-md '>
         <div className='flex items-center gap-3 '>
             <div className='flex-none text-gray-300 group-hover:text-gray-500'>
                 <MdCropSquare className='w-5 h-5 ' />
