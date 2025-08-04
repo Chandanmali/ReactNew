@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IoMdMore, IoMdArrowBack } from 'react-icons/io'
 import {
   MdKeyboardArrowLeft,
@@ -12,11 +12,15 @@ import {
 } from "react-icons/md";
 import { BiArchiveIn } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
+import { MessageContext } from '../utils/MessageContext';
+
 
 function Mail() {
 
   const navigate = useNavigate()
-  
+
+  const {open, setOpen} = useContext(MessageContext)
+
   return (
     <div className='flex-1 bg-white rounded-xl mx-5'>
       <div className='flex items-center justify-between px-4'>
@@ -79,7 +83,15 @@ function Mail() {
           <p>message</p>
         </div>
 
+        { open &&
+          <div className='w-1/2 border rounded-xl px-50 py-20'>
+            <h1>write message</h1>
+          </div>
+        }
+
       </div>
+
+
 
     </div>
   )

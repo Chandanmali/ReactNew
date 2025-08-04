@@ -8,6 +8,8 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Inbox from './components/Inbox'
 import DashBoard from './components/DashBoard'
 import Mail from './components/Mail'
+import { MessageProvider } from './utils/MessageContext'
+
 
 const appRouter = createBrowserRouter([
   {
@@ -32,12 +34,13 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <MessageProvider>
+    
       <div className='bg-[#f8fafd] h-screen w-screen overflow-hidden'>
         <Navbar />
         <RouterProvider router={appRouter} />
       </div>
-    </>
+    </MessageProvider>
   )
 }
 
