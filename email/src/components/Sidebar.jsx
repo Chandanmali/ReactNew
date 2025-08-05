@@ -5,6 +5,7 @@ import { FaRegStar } from "react-icons/fa6";
 import { MdOutlineDrafts, MdOutlineKeyboardArrowDown, MdOutlineWatchLater } from "react-icons/md";
 import { TbSend, TbSend2 } from 'react-icons/tb';
 import { MessageContext } from '../utils/MessageContext';
+import { useDispatch } from 'react-redux';
 
 function Sidebar() {
 
@@ -43,11 +44,12 @@ function Sidebar() {
     //const [open, setOpen] = useState(false)
 
     const {open, setOpen} = useContext(MessageContext)
+    const dispatch = useDispatch();
 
     return (
         <div className='w-[15%]'>
             <div className='p-3'>
-                <button onClick={() => setOpen(true)} className='flex items-center gap-2 p-4 rounded-2xl hover:shadow-xl bg-[#C2E7FF] font-semibold hover:border-gray-900 cursor-pointer'>
+                <button onClick={() => dispatch(setOpen(true))} className='flex items-center gap-2 p-4 rounded-2xl hover:shadow-xl bg-[#C2E7FF] font-semibold hover:border-gray-900 cursor-pointer'>
                     <LuPencil size={'24px'} />
                     Compose
                 </button>
