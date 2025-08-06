@@ -6,6 +6,7 @@ import { MdOutlineDrafts, MdOutlineKeyboardArrowDown, MdOutlineWatchLater } from
 import { TbSend, TbSend2 } from 'react-icons/tb';
 import { MessageContext } from '../utils/MessageContext';
 import { useDispatch } from 'react-redux';
+import { setOpen } from '../redux/appSlice';
 
 function Sidebar() {
 
@@ -43,7 +44,7 @@ function Sidebar() {
 
     //const [open, setOpen] = useState(false)
 
-    const {open, setOpen} = useContext(MessageContext)
+    //const {open, setOpen} = useContext(MessageContext)
     const dispatch = useDispatch();
 
     return (
